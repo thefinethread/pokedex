@@ -2,7 +2,7 @@
 	<div
 		:class="`${
 			isFullScreen ? 'h-full' : ''
-		} flex w-full bg-blue-100 justify-center items-center flex-col`"
+		} flex w-full justify-center items-center flex-col my-4`"
 	>
 		<img :src="pikachu" alt="loading" class="w-20" />
 		<p class="font-medium text-zinc-500 tracking-wider">Loading...</p>
@@ -17,8 +17,4 @@ const props = defineProps({
 		default: true,
 	},
 });
-
-// const { isFullScreen } = withDefaults(props, {
-// 	isFullScreen: true,
-// });
 </script>

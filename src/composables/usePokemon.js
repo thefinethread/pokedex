@@ -1,8 +1,7 @@
 import { POKE_API_URL, POKE_API_RES_LIM } from '@/constants/constants';
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
-const useComposable = () => {
-	const pokemons = ref([]);
+const usePokemon = (pokemonStore) => {
 	const offset = ref(0);
 	const loadingMore = ref(false);
 
@@ -39,8 +38,8 @@ const useComposable = () => {
 			};
 		});
 
-		pokemons.value = [...pokemons.value, ...newList];
-		offset.value += 20;
+		pokemonStore.setPokemons(newList);
+		offset.value += POKE_API_RES_LIM;
 	};
 
 	const loadMorePokemons = async () => {
@@ -55,12 +54,15 @@ const useComposable = () => {
 		updateState(pokemonsDataList);
 	};
 
+	onMounted(() => {
+		getPokemons();
+	});
+
 	return {
-		pokemons,
 		loadingMore,
 		getPokemons,
 		loadMorePokemons,
 	};
 };
 
-export default useComposable;
+export default usePokemon;

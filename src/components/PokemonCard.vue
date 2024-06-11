@@ -16,6 +16,7 @@
 		<div class="flex gap-4">
 			<span
 				v-for="type in types"
+				:key="type"
 				:class="`${pokemonType[type].darkBgColor} p-3 rounded-full shadow-xl`"
 				:title="type"
 			>

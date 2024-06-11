@@ -9,8 +9,11 @@
 </template>
 
 <script setup>
-import {} from 'vue';
+import { inject } from 'vue';
 import PokemonCard from './PokemonCard.vue';
 
-const { pokemons } = defineProps(['pokemons']);
+const pokemonStore = inject('pokemon-store');
+const pokemons = pokemonStore.getAllPokemons();
+
+console.log(typeof pokemons);
 </script>
