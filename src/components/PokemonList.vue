@@ -4,7 +4,6 @@
 			v-for="pokemon in pokemons"
 			:key="pokemon.id"
 			:pokemon="pokemon"
-			:id="pokemon.id"
 		/>
 	</div>
 </template>

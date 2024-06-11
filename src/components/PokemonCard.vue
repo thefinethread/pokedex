@@ -29,9 +29,9 @@
 import { POKE_IMG_URL } from '../constants/constants';
 import pokemonType from '@/utils/pokemonType';
 
-const { pokemon, id } = defineProps(['pokemon', 'id']);
+const { pokemon } = defineProps(['pokemon']);
 
-const { types, name } = pokemon;
+const { types, name, id } = pokemon;
 
 const cardBgColor = `${pokemonType[types[0]].lightBgColorFrom} 
 	${
