@@ -1,7 +1,10 @@
 <template>
-	<main class="m-auto h-full">
-		<PokemonList v-if="false" />
-		<Loader />
+	<main class="m-auto flex-1 py-40">
+		<PokemonList
+			v-if="pokemons.length && pokemons[0].hasOwnProperty('id')"
+			:pokemons="pokemons"
+		/>
+		<Loader v-else />
 	</main>
 </template>
 

@@ -1,10 +1,10 @@
 <template>
 	<div class="flex flex-wrap gap-12 justify-center items-center m-auto">
 		<PokemonCard
-			v-for="(pokemon, index) in pokemons"
-			:key="pokemon.name"
+			v-for="pokemon in pokemons"
+			:key="pokemon.id"
 			:pokemon="pokemon"
-			:id="index + 1"
+			:id="pokemon.id"
 		/>
 	</div>
 </template>
@@ -13,7 +13,5 @@
 import {} from 'vue';
 import PokemonCard from './PokemonCard.vue';
 
-const props = defineProps(['pokemons']);
-
-console.log(props.pokemons);
+const { pokemons } = defineProps(['pokemons']);
 </script>

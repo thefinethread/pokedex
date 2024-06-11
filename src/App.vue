@@ -1,5 +1,5 @@
 <template>
-	<div class="h-screen w-full max-w-[90rem] px-8 m-auto bg-yellow-50">
+	<div class="max-w-[90rem] h-screen px-8 m-auto bg-yellow-50 flex flex-col">
 		<Header />
 		<Home />
 	</div>
